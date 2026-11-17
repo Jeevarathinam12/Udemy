@@ -1,4 +1,5 @@
 
+
 * {
     margin: 0;
     padding: 0;
@@ -11,14 +12,14 @@ body {
     color: #1c1d1f;
 }
 
-/* Navbar */
 
 .navbar {
-    height: 75px;
+    min-height: 75px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 0 35px;
+    padding: 15px 35px;
+    gap: 15px;
 }
 
 .logo {
@@ -43,13 +44,13 @@ body {
     border-radius: 30px;
     border: 2px solid #333;
     background: #f7f9fa;
-
 }
 
 .login, .signup {
     padding: 12px 22px;
     font-weight: bold;
     cursor: pointer;
+    white-space: nowrap;
 }
 
 .login {
@@ -63,21 +64,21 @@ body {
     border: none;
 }
 
-/* Hero */
 
 .hero {
-    height: 380px;
+    min-height: 380px;
     background:
         linear-gradient(90deg, rgba(0,0,0,.78), rgba(0,0,0,.1)),
         url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1400");
     background-size: cover;
     background-position: center;
     padding: 60px;
+    display: flex;
+    align-items: center;
 }
 
 .hero-content {
     color: white;
-    padding-top: 20px;
 }
 
 .hero-content h1 {
@@ -101,7 +102,6 @@ body {
     cursor: pointer;
 }
 
-/* Categories */
 
 .categories-section, .courses {
     padding: 50px 6%;
@@ -120,23 +120,23 @@ body {
 .category-list {
     display: flex;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 .category {
     padding: 18px 25px;
-    border: 2px solid #000000;
+    border: 2px solid #000;
     border-radius: 20px;
     font-weight: bold;
     cursor: pointer;
-    transition: 1s;
+    transition: 0.3s;
 }
 
 .category:hover {
     background: #3324ff;
-    color: #000000;
+    color: white;
 }
 
-/* Courses */
 
 .course-container {
     display: grid;
@@ -145,13 +145,14 @@ body {
 }
 
 .course-card {
-    border: 1px solid #000000;
+    border: 1px solid #ddd;
     transition: 0.3s;
+    min-width: 0;
 }
 
 .course-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 5px 15px rgba(0,0,0,.15);
 }
 
 .course-card img {
@@ -189,7 +190,6 @@ body {
     cursor: pointer;
 }
 
-/* Footer */
 
 footer {
     background: #1c1d1f;
@@ -197,4 +197,159 @@ footer {
     text-align: center;
     padding: 35px;
     line-height: 2;
+}
+
+
+
+@media (max-width: 1024px) {
+
+    .navbar {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+    }
+
+    .search-box {
+        width: 28%;
+    }
+
+    .course-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+}
+
+
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 15px;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    .categories,
+    .navbar nav {
+        display: none;
+    }
+
+    .search-box {
+        width: 100%;
+        order: 5;
+    }
+
+    .search-box input {
+        padding: 12px;
+    }
+
+    .login, .signup {
+        padding: 10px 14px;
+        font-size: 13px;
+    }
+
+    .hero {
+        min-height: 320px;
+        padding: 35px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
+
+    .hero-content p br {
+        display: none;
+    }
+
+    .categories-section,
+    .courses {
+        padding: 35px 20px;
+    }
+
+    .categories-section h2,
+    .courses h2 {
+        font-size: 25px;
+    }
+
+    .category-list {
+        gap: 10px;
+    }
+
+    .category {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+
+    .course-container {
+        grid-template-columns: 1fr;
+    }
+
+    .course-card img {
+        height: 220px;
+    }
+
+    footer {
+        padding: 25px 15px;
+    }
+
+}
+
+
+
+@media (max-width: 480px) {
+
+    .navbar {
+        padding: 12px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .hero {
+        min-height: 280px;
+        padding: 25px 18px;
+    }
+
+    .hero-content h1 {
+        font-size: 27px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    .hero-content button {
+        padding: 12px 20px;
+    }
+
+    .categories-section h2,
+    .courses h2 {
+        font-size: 22px;
+    }
+
+    .category {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+
+    .course-info {
+        padding: 15px;
+    }
+
+    .course-info h3 {
+        font-size: 16px;
+    }
+
 }
